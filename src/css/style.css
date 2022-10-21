@@ -313,29 +313,22 @@ label svg {
 a {
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
     cursor: pointer;
+    background-color: var(--color-priority);
 }
 
-a:hover {
+a:hover,
+.cta:hover {
     box-shadow: 0 3.1px 2.7px rgba(0, 0, 0, 0.13), 0 7.8px 6.9px rgba(0, 0, 0, 0.09), 0 15.9px 14.2px rgba(0, 0, 0, 0.072), 0 32.9px 29.2px rgba(0, 0, 0, 0.058), 0 90px 80px rgba(0, 0, 0, 0.04);
     background-color: var(--color-black);
 }
 
-a:hover:after {
+a:active,
+.cta:active,
+a:focus,
+.cta:focus {
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    background-color: var(--color-priority);
-}
-
-a:active {
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    background-color: var(--color-priority);
-}
-
-a:focus {
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    background-color: var(--color-priority);
+    background-color: var(--color-details);
 }
 
 #patient-6 {
