@@ -217,6 +217,10 @@ label svg {
     width: 100%;
 }
 
+#attendence p {
+    margin: 0.325em 0;
+}
+
 .counting-waiting p,
 .counting-served p,
 .last-one-description p {
