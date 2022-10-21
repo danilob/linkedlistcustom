@@ -31,13 +31,17 @@ function setStyleHasChild(check) {
 
 const namePatient = get("#name")
 
+function removeErrorNamePatient() {
+    namePatient.classList.remove('error-field')
+    var errorName = get("#name + p");
+    if (errorName) {
+        errorName.parentNode.removeChild(errorName);
+    }
+}
+
 namePatient.addEventListener('input', () => {
     if ((namePatient.classList.contains("error-field")) && (namePatient.value.length >= 3)) {
-        namePatient.classList.remove('error-field')
-        var errorName = get("#name + p");
-        if (errorName) {
-            errorName.parentNode.removeChild(errorName);
-        }
+        removeErrorNamePatient()
     }
 })
 
@@ -48,13 +52,17 @@ const agePatientPattern = {
 }
 const agePatientMasked = IMask(agePatient, agePatientPattern)
 
+function removeErrorAgePatient() {
+    agePatient.classList.remove('error-field')
+    var errorAge = get("#age + p");
+    if (errorAge) {
+        errorAge.parentNode.removeChild(errorAge);
+    }
+}
+
 agePatient.addEventListener('input', () => {
     if ((agePatient.classList.contains("error-field")) && (agePatient.value.length > 0)) {
-        agePatient.classList.remove('error-field')
-        var errorAge = get("#age + p");
-        if (errorAge) {
-            errorAge.parentNode.removeChild(errorAge);
-        }
+        removeErrorAgePatient()
     }
 })
 
@@ -67,11 +75,13 @@ globalThis.patientList = patientList
 btnAdd.addEventListener('click', () => {
     var validate = true
     if (namePatient.value.length < 3) {
+        removeErrorNamePatient()
         namePatient.classList.add("error-field")
         namePatient.insertAdjacentHTML('afterend', '<p class="error">Insira mais de 3 caracteres.</p>')
         validate = false
     }
     if (agePatient.value.length == 0) {
+        removeErrorAgePatient()
         agePatient.classList.add("error-field")
         agePatient.insertAdjacentHTML('afterend', '<p class="error">Obrigatório.</p>')
         validate = false

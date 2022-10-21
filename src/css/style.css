@@ -332,6 +332,12 @@ a:active {
     background-color: var(--color-priority);
 }
 
+a:focus {
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    background-color: var(--color-priority);
+}
+
 #patient-6 {
     order: -1;
 }
