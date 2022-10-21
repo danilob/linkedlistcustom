@@ -2,6 +2,7 @@
 :root {
     --color-priority: #ff5858;
     --color-button: #ea047e;
+    --color-button-hover: #fe047a;
     --color-black: #3c4048;
     --color-details: #00abb3;
 }
@@ -182,10 +183,58 @@ label svg {
     text-transform: uppercase;
 }
 
-#form {
+#form,
+#attendence {
     background-color: white;
     padding: 2em;
     border-radius: 5px;
+    margin: 1em;
+}
+
+#attendence {
+    display: flex;
+    flex-wrap: wrap;
+    font-weight: bold;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#waiting,
+#served,
+#last-one {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+    font-size: 0.9em;
+}
+
+#last-one,
+.last-one-description {
+    width: 100%;
+    text-align: center;
+}
+
+#pop {
+    width: 100%;
+}
+
+.counting-waiting p,
+.counting-served p,
+.last-one-description p {
+    color: white;
+    background-color: var(--color-details);
+    padding: 1em 2em;
+    border-radius: 12px;
+    text-align: center;
+    display: inline-block;
+}
+
+.counting-waiting,
+.counting-served,
+.last-one-description {
+    text-align: center;
+    display: block;
 }
 
 @media (min-width: 600px) {
@@ -263,6 +312,24 @@ label svg {
     background: var(--color-priority);
 }
 
+a {
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+a:hover {
+    box-shadow: 0 3.1px 2.7px rgba(0, 0, 0, 0.13), 0 7.8px 6.9px rgba(0, 0, 0, 0.09), 0 15.9px 14.2px rgba(0, 0, 0, 0.072), 0 32.9px 29.2px rgba(0, 0, 0, 0.058), 0 90px 80px rgba(0, 0, 0, 0.04);
+    background-color: var(--color-black);
+}
+
+#patient-6 {
+    order: -1;
+}
+
+#patient-7 {
+    order: -2;
+}
+
 @media (min-width: 600px) {
     #queue {
         padding: 1em;
@@ -287,6 +354,20 @@ label svg {
 @media (min-width: 850px) {
     .patient {
         width: 23.1%;
+    }
+    #attendence {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+    #waiting,
+    #served,
+    #last-one {
+        margin-right: 1em;
+    }
+    #last-one {
+        width: 65%;
     }
 }
 

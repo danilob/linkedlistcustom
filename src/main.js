@@ -1,12 +1,13 @@
 import './css/style.css'
 import { Patient } from './core/patient.js'
-import { createElementPatient, removeElementPatient } from './component/conteiner.js'
+import { createElementPatient, removeElementPatient, removeElementPatientHTML } from './component/conteiner.js'
 
 console.log(new Patient())
 
 import IMask from 'imask';
 
 const get = (e) => document.querySelector(e);
+const gets = (e) => document.querySelectorAll(e);
 
 const checkHasChild = get("#cb")
 const checkPolygon = get("#checkbox svg polyline")
@@ -83,5 +84,29 @@ btnAdd.addEventListener('click', () => {
         checkHasChild.checked = false;
         createElementPatient(patient)
         setStyleHasChild(false)
+        var countWaiting = get('.counting-waiting p')
+        countWaiting.innerText = Number(countWaiting.textContent) + 1
     }
+})
+
+
+const btnRemove = get("#remove")
+
+function by_order(element) {
+    var patient_item = get(`#${element.id}`)
+    var style = window.getComputedStyle(patient_item)
+    var order = style.getPropertyValue('order')
+    return Number(order);
+}
+
+
+btnRemove.addEventListener('click', () => {
+    var queuePatientHTML = gets(".patient");
+    var queuePatient = [].slice.call(queuePatientHTML);
+    if (queuePatient.length !== 0) {
+        queuePatient.sort(by_order)
+        var firstPatient = queuePatient[0];
+        removeElementPatientHTML(firstPatient.id)
+    }
+
 })
