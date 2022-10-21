@@ -1,3 +1,5 @@
+import { getActualHour } from '/src/component/conteiner.js'
+
 export class Patient {
     static total = 0
     constructor(name = '', age = 0, hasChild = false) {
@@ -6,7 +8,6 @@ export class Patient {
         this.age = age
         this.hasChild = hasChild
         Patient.total += 1
-        var now = new Date();
-        this.time = `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`
+        this.time = getActualHour()
     }
 }

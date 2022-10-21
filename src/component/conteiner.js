@@ -1,5 +1,12 @@
 const get = (e) => document.querySelector(e);
 const MAXSIZE = 15
+
+export function getActualHour() {
+    var now = new Date();
+    return `${(now.getHours() < 10) ? '0' : ''}${now.getHours()}:${(now.getMinutes() < 10) ? '0' : ''}${now.getMinutes()}:${(now.getSeconds() < 10) ? '0' : ''}${now.getSeconds()}`
+}
+
+
 export function createElementPatient(patient) {
     var container = get('#queue')
     container.insertAdjacentHTML('beforeend', `
@@ -33,8 +40,7 @@ export function removeElementPatientHTML(id) {
     var age = Number(get(`#${id} .patient-age`).textContent)
     var hasChildText = get(`#${id} .patient-haschild`).textContent
     var hasChild = hasChildText === 'COM CRIANÇA'
-    var now = new Date();
-    var time = `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`
+    var time = getActualHour()
     showLastOne.innerText = `${name} ${(age >= 60 || hasChild) ? '(P)' : ''} às ${time}`
     element.parentNode.removeChild(element);
     if (countWaitingNew === 0) {
