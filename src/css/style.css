@@ -63,8 +63,6 @@ header .logo {
     color: var(--color-priority);
 }
 
-#append {}
-
 
 /* form */
 
@@ -188,7 +186,7 @@ label svg {
     background-color: white;
     padding: 2em;
     border-radius: 5px;
-    margin: 1em;
+    margin: 1em 0 1em;
 }
 
 #attendence {
