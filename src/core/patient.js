@@ -10,4 +10,9 @@ export class Patient {
         Patient.total += 1
         this.time = getActualHour()
     }
+
+    isPriority() {
+        return this.age >= 60 || this.hasChild
+
+    }
 }

@@ -1,8 +1,10 @@
 import './css/style.css'
 import { Patient } from './core/patient.js'
-import { createElementPatient, removeElementPatient, removeElementPatientHTML } from './component/conteiner.js'
+import { createElementPatient, updateElementPatient, removeElementPatient, removeElementPatientHTML } from './component/conteiner.js'
 
-console.log(new Patient())
+import { SortedLinkedList } from './core/linkedlistcustom.js'
+
+const linkedlistcustom = new SortedLinkedList()
 
 import IMask from 'imask';
 
@@ -48,7 +50,8 @@ namePatient.addEventListener('input', () => {
 const agePatient = get("#age")
 
 const agePatientPattern = {
-    mask: "000"
+    mask: "000",
+    lazy: true
 }
 const agePatientMasked = IMask(agePatient, agePatientPattern)
 
@@ -88,11 +91,13 @@ btnAdd.addEventListener('click', () => {
     }
     if (validate) {
         var patient = new Patient(namePatient.value, Number(agePatient.value), checkHasChild.checked)
-        patientList.push(patient)
+        linkedlistcustom.push(patient)
         namePatient.value = ''
         agePatient.value = ''
+        agePatientMasked.masked.reset()
         checkHasChild.checked = false;
         createElementPatient(patient)
+        updateElementPatient(linkedlistcustom)
         setStyleHasChild(false)
         var countWaiting = get('.counting-waiting p')
         countWaiting.innerText = Number(countWaiting.textContent) + 1
@@ -111,12 +116,6 @@ function by_order(element) {
 
 
 btnRemove.addEventListener('click', () => {
-    var queuePatientHTML = gets(".patient");
-    var queuePatient = [].slice.call(queuePatientHTML);
-    if (queuePatient.length !== 0) {
-        queuePatient.sort(by_order)
-        var firstPatient = queuePatient[0];
-        removeElementPatientHTML(firstPatient.id)
-    }
-
+    var item = linkedlistcustom.removeAt(0)
+    removeElementPatientHTML(`patient-${item.id}`)
 })

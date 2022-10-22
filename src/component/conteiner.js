@@ -1,3 +1,6 @@
+import { Patient } from '/src/core/patient.js'
+
+
 const get = (e) => document.querySelector(e);
 const MAXSIZE = 15
 
@@ -6,6 +9,14 @@ export function getActualHour() {
     return `${(now.getHours() < 10) ? '0' : ''}${now.getHours()}:${(now.getMinutes() < 10) ? '0' : ''}${now.getMinutes()}:${(now.getSeconds() < 10) ? '0' : ''}${now.getSeconds()}`
 }
 
+export function updateElementPatient(list_patient) {
+    for (var i = 0; i < list_patient.size(); i++) {
+        var patient = list_patient.getElementAt(i)
+        var patientHtml = get(`#patient-${patient.element.id}`)
+        patientHtml.style.order = i
+    }
+
+}
 
 export function createElementPatient(patient) {
     var container = get('#queue')
@@ -22,7 +33,9 @@ export function createElementPatient(patient) {
 
 
 export function removeElementPatient(patient) {
-    var element = get(`#patient-${patient.id}`)
+    var element = get(`#
+                patient - $ { patient.id }
+                `)
     var countAttendence = get('.counting-served p')
     countAttendence.innerText = Number(countAttendence.textContent) + 1
     element.parentNode.removeChild(element);
