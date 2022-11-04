@@ -1,0 +1,2 @@
+- [Início](/pt-br/)
+- [Guia](/pt-br/guide.md "Guia de Uso do App")

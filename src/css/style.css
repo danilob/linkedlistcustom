@@ -1,389 +1,389 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display&display=swap");
 :root {
-    --color-priority: #ff5858;
-    --color-button: #ea047e;
-    --color-button-hover: #fe047a;
-    --color-black: #3c4048;
-    --color-details: #00abb3;
+  --color-priority: #ff5858;
+  --color-button: #ea047e;
+  --color-button-hover: #fe047a;
+  --color-black: #3c4048;
+  --color-details: #00abb3;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html,
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    background: #eeeeee;
-    font-family: "Montserrat", sans-serif;
-    color: var(--color-black);
+  background: #eeeeee;
+  font-family: "Montserrat", sans-serif;
+  color: var(--color-black);
 }
 
 #app {
-    width: 80%;
-    max-width: 800px;
-    margin: 1em auto;
+  width: 80%;
+  max-width: 800px;
+  margin: 1em auto;
 }
 
 header {
-    display: flex;
-    align-items: baseline;
-    align-content: center;
+  display: flex;
+  align-items: baseline;
+  align-content: center;
 }
 
 #header {
-    font-size: 2.5rem;
-    font-weight: 900;
+  font-size: 2.5rem;
+  font-weight: 900;
 }
 
 #header::before {
-    position: absolute;
-    content: "";
-    height: 0.7em;
-    width: 80px;
-    z-index: -1;
-    background: var(--color-priority);
-    transform: translate(-10%, 235%);
+  position: absolute;
+  content: "";
+  height: 0.7em;
+  width: 80px;
+  z-index: -1;
+  background: var(--color-priority);
+  transform: translate(-10%, 235%);
 }
 
 #logo {
-    margin-left: 0.5em;
+  margin-left: 0.5em;
 }
 
 header .logo {
-    display: inline;
-    height: 2em;
+  display: inline;
+  height: 2em;
 }
 
 .f-priority {
-    color: var(--color-priority);
+  color: var(--color-priority);
 }
-
 
 /* form */
 
 label {
-    display: block;
-    font-weight: bold;
-    margin: 1em 0em;
+  display: block;
+  font-weight: bold;
+  margin: 1em 0em;
 }
 
 input[type="text"],
 select,
 textarea {
-    width: 100%;
-    padding: 0.5em;
-    border-radius: 0.2em;
-    border: 1px solid #acacac;
-    color: var(--color-black);
+  width: 100%;
+  padding: 0.5em;
+  border-radius: 0.2em;
+  border: 1px solid #acacac;
+  color: var(--color-black);
 }
 
 input[type="text"]:focus,
 textarea:focus {
-    outline: 3px solid #acacac;
+  outline: 3px solid #acacac;
 }
 
 .left-label {
-    display: unset;
-    font-weight: normal;
-    margin-right: 2em;
+  display: unset;
+  font-weight: normal;
+  margin-right: 2em;
 }
 
 .mt-extra {
-    margin-top: 2em;
+  margin-top: 2em;
 }
 
 .extra-height {
-    min-height: 150px;
+  min-height: 150px;
 }
 
 input[type="checkbox"] {
-    display: none;
-    pointer-events: none;
+  display: none;
+  pointer-events: none;
 }
 
-input[type="checkbox"]+label {
-    cursor: pointer;
-    display: grid;
-    grid-template-columns: auto 3fr;
+input[type="checkbox"] + label {
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: auto 3fr;
 }
 
-input[type="checkbox"]:checked+label .check {
-    stroke-dashoffset: 0;
+input[type="checkbox"]:checked + label .check {
+  stroke-dashoffset: 0;
 }
 
 label svg {
-    width: 2em;
-    stroke: var(--color-black);
-    stroke-width: 5;
-    fill: white;
+  width: 2em;
+  stroke: var(--color-black);
+  stroke-width: 5;
+  fill: white;
 }
 
 .box {
-    stroke-dasharray: 320;
-    stroke-dashoffset: 0;
-    fill: white;
-    transition: stroke-dashoffset 0.3s linear;
+  stroke-dasharray: 320;
+  stroke-dashoffset: 0;
+  fill: white;
+  transition: stroke-dashoffset 0.3s linear;
 }
 
 .check {
-    stroke-dasharray: 70;
-    stroke-dashoffset: 70;
-    fill: none;
-    transition: stroke-dashoffset 0.3s linear;
+  stroke-dasharray: 70;
+  stroke-dashoffset: 70;
+  fill: none;
+  transition: stroke-dashoffset 0.3s linear;
 }
 
 .left-col span {
-    padding-top: 0.5em;
-    margin-left: 0.5em;
-    font-weight: bold;
-    color: var(--color-black);
+  padding-top: 0.5em;
+  margin-left: 0.5em;
+  font-weight: bold;
+  color: var(--color-black);
 }
 
 .cta {
-    display: block;
-    width: 100%;
-    padding: 1em;
-    text-align: center;
-    text-decoration: none;
-    color: white;
-    background: var(--color-priority);
-    margin-top: 1.5em;
-    font-weight: bold;
-    font-size: 1.2em;
-    border-radius: 0.2em;
+  display: block;
+  width: 100%;
+  padding: 1em;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background: var(--color-priority);
+  margin-top: 1.5em;
+  font-weight: bold;
+  font-size: 1.2em;
+  border-radius: 0.2em;
 }
 
 .right-col {
-    margin-top: 2em;
-    line-height: 1.5em;
-    color: #1b1820;
+  margin-top: 2em;
+  line-height: 1.5em;
+  color: #1b1820;
 }
 
 .left-col .error-field {
-    border: 3px solid #ffb3b3;
+  border: 3px solid #ffb3b3;
 }
 
 .error {
-    background: #ffb3b3;
-    display: inline-block;
-    padding: 0.3em 0.5em;
-    font-size: 0.85em;
-    font-weight: bold;
-    margin-top: -0.1em;
+  background: #ffb3b3;
+  display: inline-block;
+  padding: 0.3em 0.5em;
+  font-size: 0.85em;
+  font-weight: bold;
+  margin-top: -0.1em;
 }
 
 #name {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 #form,
 #attendence {
-    background-color: white;
-    padding: 2em;
-    border-radius: 5px;
-    margin: 1em 0 1em;
+  background-color: white;
+  padding: 2em;
+  border-radius: 5px;
+  margin: 1em 0 1em;
 }
 
 #attendence {
-    display: flex;
-    flex-wrap: wrap;
-    font-weight: bold;
-    justify-content: space-around;
-    align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  font-weight: bold;
+  justify-content: space-around;
+  align-items: center;
 }
 
 #waiting,
 #served,
 #last-one {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1em;
-    font-size: 0.9em;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1em;
+  font-size: 0.9em;
 }
 
 #last-one,
 .last-one-description {
-    width: 100%;
-    text-align: center;
+  width: 100%;
+  text-align: center;
 }
 
 #pop {
-    width: 100%;
+  width: 100%;
 }
 
 #attendence p {
-    margin: 0.325em 0;
+  margin: 0.325em 0;
 }
 
 .counting-waiting p,
 .counting-served p,
 .last-one-description p {
-    color: white;
-    background-color: var(--color-details);
-    padding: 1em 2em;
-    border-radius: 12px;
-    text-align: center;
-    display: inline-block;
+  color: white;
+  background-color: var(--color-details);
+  padding: 1em 2em;
+  border-radius: 12px;
+  text-align: center;
+  display: inline-block;
 }
 
 .counting-waiting,
 .counting-served,
 .last-one-description {
-    text-align: center;
-    display: block;
+  text-align: center;
+  display: block;
 }
 
 @media (min-width: 600px) {
-    .cta {
-        margin: 0;
-        height: unset;
-        text-align: center;
-        padding: 0.5em 0.5em;
-    }
-    .items {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .items:nth-child(1) {
-        align-items: flex-start;
-    }
-    .item-1 {
-        width: 67.5%;
-    }
-    .item-2 {
-        width: 27.5%;
-    }
-    .item-3 {
-        width: 67.5%;
-    }
-    .item-4 {
-        width: 27.5%;
-    }
+  .cta {
+    margin: 0;
+    height: unset;
+    text-align: center;
+    padding: 0.5em 0.5em;
+  }
+  .items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .items:nth-child(1) {
+    align-items: flex-start;
+  }
+  .item-1 {
+    width: 67.5%;
+  }
+  .item-2 {
+    width: 27.5%;
+  }
+  .item-3 {
+    width: 67.5%;
+  }
+  .item-4 {
+    width: 27.5%;
+  }
 }
 
 #queue {
-    padding: 1em;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  padding: 1em;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .patient {
-    background: var(--color-black);
-    color: white;
-    padding: 1em 1em;
-    margin-bottom: 1em;
-    font-size: 0.725rem;
-    width: 100%;
-    border-left: 5px solid var(--color-details);
-    border-radius: 0 10px 10px 0px;
+  background: var(--color-black);
+  color: white;
+  padding: 1em 1em;
+  margin-bottom: 1em;
+  font-size: 0.725rem;
+  width: 100%;
+  border-left: 5px solid var(--color-details);
+  border-radius: 0 10px 10px 0px;
 }
 
 .patient-age {
-    font-size: 1rem;
-    font-weight: bold;
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 .patient-haschild {
-    background-color: white;
-    color: var(--color-black);
-    margin: 0 auto;
-    width: 70%;
-    padding: 0.25em 0.5em;
-    border-radius: 5px;
-    text-align: center;
-    display: block;
+  background-color: white;
+  color: var(--color-black);
+  margin: 0 auto;
+  width: 70%;
+  padding: 0.25em 0.5em;
+  border-radius: 5px;
+  text-align: center;
+  display: block;
 }
 
 .patient-time-arrived {
-    text-align: right;
-    font-size: 0.625rem;
-    letter-spacing: 2px;
+  text-align: right;
+  font-size: 0.625rem;
+  letter-spacing: 2px;
 }
 
 .c-priority {
-    background: var(--color-priority);
+  background: var(--color-priority);
 }
 
 a {
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    background-color: var(--color-priority);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  background-color: var(--color-priority);
 }
 
 a:hover,
 .cta:hover {
-    box-shadow: 0 3.1px 2.7px rgba(0, 0, 0, 0.13), 0 7.8px 6.9px rgba(0, 0, 0, 0.09), 0 15.9px 14.2px rgba(0, 0, 0, 0.072), 0 32.9px 29.2px rgba(0, 0, 0, 0.058), 0 90px 80px rgba(0, 0, 0, 0.04);
-    background-color: var(--color-black);
+  box-shadow: 0 3.1px 2.7px rgba(0, 0, 0, 0.13),
+    0 7.8px 6.9px rgba(0, 0, 0, 0.09), 0 15.9px 14.2px rgba(0, 0, 0, 0.072),
+    0 32.9px 29.2px rgba(0, 0, 0, 0.058), 0 90px 80px rgba(0, 0, 0, 0.04);
+  background-color: var(--color-black);
 }
 
 a:active,
 .cta:active,
 a:focus,
 .cta:focus {
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    background-color: var(--color-details);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  background-color: var(--color-details);
 }
 
 #patient-6 {
-    order: -1;
+  order: -1;
 }
 
 #patient-7 {
-    order: -2;
+  order: -2;
 }
 
 @media (min-width: 600px) {
-    #queue {
-        padding: 1em;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        align-items: center;
-        flex-direction: row;
-    }
-    .patient {
-        width: 44.5%;
-        margin-left: 1em;
-    }
+  #queue {
+    padding: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+  }
+  .patient {
+    width: 44.5%;
+    margin-left: 1em;
+  }
 }
 
 @media (min-width: 700px) {
-    .patient {
-        width: 31%;
-    }
+  .patient {
+    width: 31%;
+  }
 }
 
 @media (min-width: 850px) {
-    .patient {
-        width: 23.1%;
-    }
-    #attendence {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        align-items: center;
-    }
-    #waiting,
-    #served,
-    #last-one {
-        margin-right: 1em;
-    }
-    #last-one {
-        width: 65%;
-    }
+  .patient {
+    width: 23.1%;
+  }
+  #attendence {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+  #waiting,
+  #served,
+  #last-one {
+    margin-right: 1em;
+  }
+  #last-one {
+    width: 65%;
+  }
 }
-
 
 /* @media (min-width: 950px) {
     main {
@@ -395,7 +395,6 @@ a:focus,
         font-size: 1.7em;
     }
 } */
-
 
 /* a {
 font-weight: 500;

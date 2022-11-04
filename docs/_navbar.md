@@ -1,0 +1,3 @@
+- Translations
+  - [:us: en-us](/)
+  - [:brazil: pt-br](/pt-br/)
